@@ -5,7 +5,7 @@ driver = webdriver.Firefox()
 driver.get("https://www.binance.com/en/price/bitcoin")
 
 price = driver.find_element(By.CLASS_NAME, 'css-12ujz79')
-with open("output.txt", "w") as output:
-    output.write(price.text)
+with open("output.txt", "a") as output:
+    output.write(f'{price.text}\n')
 
 driver.quit()
